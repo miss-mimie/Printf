@@ -1,8 +1,9 @@
-#ifdef _MAIN_H
-#define _MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdarg.h>
 #include "main.h"
 
 int _putchar(char c);
