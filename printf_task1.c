@@ -16,10 +16,11 @@ int _assignint(int j)
 	if (j < 0)
 	{
 		count_variable += _putchar('-');
-		number = -;
+		number = -j;
 	}
 	else
 		number = j;
+
 	if (number / 10)
 		count_variable += _assignint(number / 10);
 	count_variable += _putchar((num % 10) + '0');
