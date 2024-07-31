@@ -1,41 +1,40 @@
+#include <stdarg.h>
+#include <stddef.h>
 #include "main.h"
-#include <unistd.h>
 
 /**
- * _printf - This prints the main function
- * @format: The format string 
+ * _printf - This is the main function
+ * @format: This is the format string
  *
- * Return: number of character printed(exc. NULL byte)
+ * Return: This returns the number of characters printed (ex. NULL byte)
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int _putchar = 0;
-	
+	int _putchar =0;
+
 	va_start(args, format);
 
 	while (*format)
 	{
-		if (*format = '%')
+		if (*format)
 		{
-			_putchar += write(1, format, 1);
-			format++;
-		}
-		else
-		{
-			format++;
-			switch (*format)
+			if (*format != '%')
 			{
-				case 'c':
-					_putchar += write(1, &va_arg(args, int), 1);
-					break;
-				case 's':
-					_putchar += _print_str(va_arg(args, char *));
-					break;
-					_putchar += write(1, "%", 1);
+				_putchar += write(1, format, 1);
+				format++;
 			}
-			format++;
+			else
+			{
+				format++;
+				switch (*format)
+				{
+					case 'c':
+						_putchar += write(1, &va_arg(args, int), 1);
+						break;
+				}
+				format++;
+			}
 		}
 	}
 
