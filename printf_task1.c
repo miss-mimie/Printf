@@ -6,33 +6,32 @@
  * _assignint - Sends an integer to stdout
  * @j: The integer to be printed
  *
- * Return: Number of characters to be written
+ * Return: The number of characters to be written
  */
 int _assignint(int j)
 {
 	int count_variable = 0;
 	unsigned int number;
 
-	if (n < 0)
+	if (j < 0)
 	{
 		count_variable += _putchar('-');
-		number = -j;
+		number = -;
 	}
 	else
 		number = j;
-
 	if (number / 10)
 		count_variable += _assignint(number / 10);
-	count += _putchar((number % 10) + '0');
+	count_variable += _putchar((num % 10) + '0');
 
 	return (count_variable);
 }
 
 /**
  * _printf - Main printf function
- * @format: This is the format string
+ * @format: Format string
  *
- * Return: This returns the number of characters to be printed
+ * Return: The number of characters to be printed
  */
 int _printf(const char *format, ...)
 {
@@ -50,7 +49,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
+			switch (*format);
 			{
 				case 'd':
 				case 'i':
@@ -61,8 +60,8 @@ int _printf(const char *format, ...)
 					i += _putchar('%');
 					break;
 				default:
-					a += _putchar('%');
-					a += _putchar(*format);
+					i += _putchar('%');
+					i += _putchar(*format);
 					break;
 			}
 		}
