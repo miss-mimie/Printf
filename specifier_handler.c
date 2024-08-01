@@ -24,6 +24,21 @@ int specifier_handler(const char spec, va_list args)
 		case 'i':
 			count_variable += print_integer(va_arg(args, int));
 			break;
+		case 'u':
+			count_variable += print_usint(va_arg(args, unsigned int));
+			break;
+		case 'o':
+			count_variable += print_octal(va_arg(args, unsigned int));
+			break;
+		case 'x':
+			count_variable += print_hexadec(va_arg(args, unsigned int));
+			break;
+		case 'X':
+			count_variable += print_hexadec(va_arg(args, unsigned int), 1);
+			break;
+		case 'b':
+			count_variable += print_bin(va_arg(args, unsigned int));
+			break;
 		case '%':
 			count_variable += _putchar('%');
 			break;
