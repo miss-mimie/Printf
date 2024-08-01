@@ -8,8 +8,14 @@
 #include <limits.h>
 
 /* Function prototypes */
+/* Printf function */
 int _printf(const char *format, ...);
+
+/* Writes to stdout */
 int _putchar(char c);
 int _puts(const char *str);
+
+/* Prints numbers */
+int print_integer(int j);
 
 #endif

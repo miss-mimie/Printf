@@ -3,27 +3,38 @@
 #include "main.h"
 
 /**
- * _assignint - Sends an integer to stdout
+ * print_integer - Sends an integer to stdout
  * @j: The integer to be printed
  *
  * Return: The number of characters to be written
  */
-int _assignint(int j)
+int print_integer(int j)
 {
-	int count_variable = 0;
-	unsigned int number;
+	int count_variable = 0, negative = 0;
+	char buffer_size[12];
+	char *pointer = buffer_size;
 
 	if (j < 0)
 	{
-		count_variable += _putchar('-');
-		number = -j;
+		negative = 1;
+		j = -j;
 	}
-	else
-		number = j;
+	do {
+		*pointer++ = (j % 10) + '0';
+		j /= 10;
+		count_variable++;
+	} while (j > 0);
 
-	if (number / 10)
-		count_variable += _assignint(number / 10);
-	count_variable += _putchar((number % 10) + '0');
+	if (negative)
+	{
+		*pointer++ = '-';
+		count_variable++;
+	}
+	while (pointer != buffer_size)
+	{
+		pointer--;
+		_putchar(*pointer);
+	}
 
 	return (count_variable);
 }
