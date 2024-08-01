@@ -10,51 +10,25 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count_variable = 0, number;
-	char character, *str;
+	int count_variable = 0;
+	const char *pointer;
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
 
-	while (*format)
+	for (pointer = format; *pointer != '\0'; pointer++)
 	{
-		if (*format == '%')
+		if (*pointer == '%')
 		{
-			format++;
-			if (*format == '\0')
+			pointer++;
+			if (*pointer == '\0')
 				break;
-
-			switch (*format)
-			{
-				case 'c':
-					character = (char) va_arg(args, int);
-					count_variable += _putchar(character);
-					break;
-				case 's':
-					str = va_arg(args, char *);
-					if (str == NULL)
-						str = "(null)";
-					count_variable += _puts(str);
-					break;
-				case 'd':
-				case 'i':
-					number = va_arg(args, int);
-					count_variable += print_integer(number);
-					break;
-				case '%':
-					count_variable += _putchar('%');
-					break;
-				default:
-					count_variable += _putchar('%');
-					count_variable += _putchar(*format);
-					break;
-			}
+			count_variable += specifier_handler(*pointer, args);
 		}
 		else
-			count_variable += _putchar(*format);
-		format++;
+			count_variable += _putchar(*pointer);
 	}
 
 	va_end(args);
