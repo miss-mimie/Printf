@@ -1,6 +1,7 @@
+#include "main.h"
+#include <unistd.h>
 #include <stdarg.h>
 #include <stddef.h>
-#include "main.h"
 
 /**
  * _putchar - Writes a character to stdout
@@ -22,6 +23,9 @@ int _putchar(char c)
 int _print_string(const char *str)
 {
 	int counter = 0;
+
+	if (str == NULL)
+		str = "(null)";
 
 	while (*str)
 	{
