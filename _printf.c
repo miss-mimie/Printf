@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count_variable = 0;
+	int count_variable = 0, number;
 	char character, *str;
 
 	if (format == NULL)
@@ -37,6 +37,11 @@ int _printf(const char *format, ...)
 					if (str == NULL)
 						str = "(null)";
 					count_variable += _puts(str);
+					break;
+				case 'd':
+				case 'i':
+					number = va_arg(args, int);
+					count_variable += print_integer(number);
 					break;
 				case '%':
 					count_variable += _putchar('%');
