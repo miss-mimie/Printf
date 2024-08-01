@@ -4,40 +4,6 @@
 #include <stddef.h>
 
 /**
- * _putchar - Writes a character to stdout
- * @c: Character to be printed
- *
- * Return: On Success 1, on error -1
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-	//You can delete this
-}
-
-/**
- * _print_string - Writes a string to stdout
- * @str: String to be printed
- *
- * Return: The number of characters printed
- */
-int _print_string(const char *str)
-{
-	int counter = 0;
-
-	if (str == NULL)
-		str = "(null)";
-
-	while (*str)
-	{
-		counter += _putchar(*str);
-		str;
-	}
-
-	return (counter);
-}
-
-/**
  * _printf - This is the main function
  * @format: This is the format string
  *
@@ -47,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count_variable = 0;
+	char character, *str;
 
 	if (format == NULL)
 		return (-1);
@@ -58,13 +25,20 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				break;
+
 			switch (*format)
 			{
 				case 'c':
-					count_variable += _putchar(va_arg(args, int));
+					character = (char) va_arg(args, int);
+					count_variable += _putchar(character);
 					break;
 				case 's':
-					count_variable += _print_string(va_arg(args, char));
+					str = va_arg(args, char *);
+					if (str == NULL)
+						str = "(null)";
+					count_variable += _puts(str);
 					break;
 				case '%':
 					count_variable += _putchar('%');
