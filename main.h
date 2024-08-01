@@ -11,6 +11,9 @@
 /* Printf function */
 int _printf(const char *format, ...);
 
+/* Handles indicated specifiers */
+int specifier_handler(const char spec, va_list args);
+
 /* Writes to stdout */
 int _putchar(char c);
 int _puts(const char *str);
