@@ -21,4 +21,7 @@ int _puts(const char *str);
 /* Prints numbers */
 int print_integer(int j);
 
+/* Converts unsigned int to binary */
+int print_bin(unsigned int b);
+
 #endif
