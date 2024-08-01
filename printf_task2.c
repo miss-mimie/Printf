@@ -8,10 +8,10 @@
  */
 int print_bin(unsigned int b)
 {
-	int count_variable = 0, i, head_zeros = 1;
-	unsigned int container = 1 << (sizeof(b) * 8 - 1);
+	int count_variable = 0, head_zeros = 1;
+	unsigned int container = 1 << ((sizeof(b) * 8) - 1);
 
-	for (i = 0; i < ((int)(sizeof(b) * 8)); i++)
+	while (container > 0)
 	{
 		if (b & container)
 		{
