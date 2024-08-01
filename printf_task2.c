@@ -11,7 +11,7 @@ int print_bin(unsigned int b)
 	int count_variable = 0, i, head_zeros = 1;
 	unsigned int container = 1 << (sizeof(b) * 8 - 1);
 
-	for (i = 0; i < sizeof(b) * 8; i++)
+	for (i = 0; i < ((int)(sizeof(b) * 8)); i++)
 	{
 		if (b & container)
 		{
