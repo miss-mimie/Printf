@@ -30,6 +30,7 @@ int print_integer(int j)
 		*pointer++ = '-';
 		count_variable++;
 	}
+
 	while (pointer != buffer_size)
 	{
 		pointer--;
