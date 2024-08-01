@@ -4,7 +4,7 @@
  * _puts - this writes the string to the standard output
  * @str: This is the string to be printed
  *
- * Return: the number of characters printed (excluding the null byte used to end output to strings)
+ * Return: Number of characters printed (excluding the null byte)
  */
 int _puts(const char *str)
 {
@@ -18,6 +18,6 @@ int _puts(const char *str)
 		_putchar(*str++);
 		i++;
 	}
-	
+
 	return (i);
 }
