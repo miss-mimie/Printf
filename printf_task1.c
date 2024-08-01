@@ -23,7 +23,7 @@ int _assignint(int j)
 
 	if (number / 10)
 		count_variable += _assignint(number / 10);
-	count_variable += _putchar((num % 10) + '0');
+	count_variable += _putchar((number % 10) + '0');
 
 	return (count_variable);
 }
@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format);
+			switch (*format)
 			{
 				case 'd':
 				case 'i':
