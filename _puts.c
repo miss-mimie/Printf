@@ -10,6 +10,9 @@ int _puts(const char *str)
 {
 	int i = 0;
 
+	if (str == NULL)
+		str = "(null)";
+
 	while (*str)
 	{
 		_putchar(*str++);
