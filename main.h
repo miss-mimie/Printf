@@ -25,8 +25,8 @@ int print_integer(int j);
 int print_bin(unsigned int b);
 
 /* Functions for u, o, x, X specifiers */
-int print_unsigned(unsigned int n);
-int print_hexadec(unsigned int n, int upper);
-int print_octal(unsigned int n);
+int print_usint(unsigned int u);
+int print_hexadec(unsigned int h, int upper);
+int print_octal(unsigned int o);
 
 #endif
