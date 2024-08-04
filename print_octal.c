@@ -10,7 +10,7 @@ int print_octal(unsigned int o)
 {
 	int count_variable = 0;
 	char buffer_size[11];
-	char *pointer = buffer;
+	char *pointer = buffer_size;
 
 	if (o == 0)
 	{
@@ -25,8 +25,8 @@ int print_octal(unsigned int o)
 		count_variable++;
 	}
 
-	while (pointer > buffer)
+	while (pointer > buffer_size)
 		_putchar(*--pointer);
 
-	return (count);
+	return (count_variable);
 }
