@@ -22,7 +22,7 @@ int print_usint(unsigned int u)
 	{
 		*pointer++ = (u % 10) + '0';
 		u /= 10;
-		count++
+		count_variable++;
 	}
 
 	while (pointer > buffer_size)
