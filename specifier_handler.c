@@ -31,7 +31,7 @@ int specifier_handler(const char spec, va_list args)
 			count_variable += print_octal(va_arg(args, unsigned int));
 			break;
 		case 'x':
-			count_variable += print_hexadec(va_arg(args, unsigned int));
+			count_variable += print_hexadec(va_arg(args, unsigned int), 0);
 			break;
 		case 'X':
 			count_variable += print_hexadec(va_arg(args, unsigned int), 1);
