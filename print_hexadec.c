@@ -12,11 +12,9 @@ int print_hexadec(unsigned int h, int upper)
 {
 	int count_variable = 0;
 	char buffer_size[9];
-	char *pointer = buffer;
-	char digits[] = "0123456789abcdef";
+	char *pointer = buffer_size;
+	const char *digits = upper ? "0123456789ABCDEF" : "0123456789abcdef";
 
-	if (upper)
-		digits = "0123456789ABCDEF";
 	if (h == 0)
 	{
 		_putchar('0');
